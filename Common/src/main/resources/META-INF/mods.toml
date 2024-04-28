@@ -6,7 +6,7 @@ logoFile="icon.png"
 
 [[mods]]
 modId="easyelytratakeoff"
-version="4.2"
+version="4.3"
 displayName="Easy Elytra Takeoff"
 displayURL="https://serilum.com/mod/easy-elytra-takeoff"
 authors="Rick South"
@@ -22,7 +22,7 @@ If you would like to contribute too, check out https://serilum.com/donate. Appre
 [[dependencies.easyelytratakeoff]]
     modId="collective"
     mandatory=true
-    versionRange="[7.53,)"
+    versionRange="[7.54,)"
     ordering="NONE"
     side="BOTH"
 

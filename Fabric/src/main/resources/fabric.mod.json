@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "easyelytratakeoff",
-  "version": "4.2",
+  "version": "4.3",
 
   "name": "Easy Elytra Takeoff",
   "description": "Allows easy taking off by elytra with a firework from the ground without that awkward jump.",
@@ -23,7 +23,7 @@
     "fabric": "*",
     "minecraft": ">=1.20",
     "java": ">=17",
-    "collective": ">=7.53"
+    "collective": ">=7.54"
   },
 
   "custom": {
