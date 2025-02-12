@@ -8,12 +8,10 @@ import net.minecraft.world.level.Level;
 import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 
-@EventBusSubscriber
 public class ForgeElytraEvent {
 	@SubscribeEvent
-	public void onPlayerTick(TickEvent.PlayerTickEvent e) {
+	public static void onPlayerTick(TickEvent.PlayerTickEvent e) {
 		Player player = e.player;
 		Level level = player.level();
 		if (level.isClientSide || e.phase.equals(TickEvent.Phase.START)) {
@@ -24,7 +22,7 @@ public class ForgeElytraEvent {
 	}
 	
 	@SubscribeEvent
-	public void onFirework(PlayerInteractEvent.RightClickItem e) {
+	public static void onFirework(PlayerInteractEvent.RightClickItem e) {
 		ElytraEvent.onFirework(e.getEntity(), e.getLevel(), e.getHand());
 	}
 }
