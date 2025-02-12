@@ -28,7 +28,7 @@ public class ModForge {
 	}
 
 	private void loadComplete(final FMLLoadCompleteEvent event) {
-    	MinecraftForge.EVENT_BUS.register(new ForgeElytraEvent());
+    	MinecraftForge.EVENT_BUS.register(ForgeElytraEvent.class);
 	}
 
 	private static void setGlobalConstants() {
