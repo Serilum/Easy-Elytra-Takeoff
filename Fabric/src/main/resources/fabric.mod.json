@@ -1,11 +1,11 @@
 {
   "schemaVersion": 1,
   "id": "easyelytratakeoff",
-  "version": "4.5",
+  "version": "4.6",
 
   "name": "Easy Elytra Takeoff",
   "description": "Allows easy taking off by elytra with a firework from the ground without that awkward jump.",
-  "authors": [ "Rick South" ],
+  "authors": [ "Serilum" ],
   "contact": {
     "homepage": "https://serilum.com/mod/easy-elytra-takeoff",
     "sources": "https://github.com/Serilum/Easy-Elytra-Takeoff",
@@ -16,14 +16,14 @@
   "icon": "icon.png",
 
   "environment": "*",
-  "entrypoints": { "main": [ "com.natamus.easyelytratakeoff.ModFabric" ] },
+  "entrypoints": { "main": [ "com.serilum.easyelytratakeoff.ModFabric" ] },
 
   "depends": {
     "fabricloader": ">=0.18.0",
     "fabric-api": "*",
     "minecraft": ">=26.3",
     "java": ">=25",
-    "collective": ">=8.39"
+    "collective": ">=8.40"
   },
 
   "custom": {
@@ -38,7 +38,7 @@
 	  " ",
 	  "Thank you very much to my Membership sponsors for supporting the development of this mod!",
 	  " ",
-	  "If you would like to contribute too, check out https://serilum.com/donate.",
+	  "If you would like to contribute too, check out https://serilum.com/donate",
 	  " ",
 	  "Membership sponsors:",
 	  " Andrean Olgo",
