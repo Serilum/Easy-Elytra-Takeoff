@@ -1,6 +1,6 @@
-package com.natamus.easyelytratakeoff.forge.events;
+package com.serilum.easyelytratakeoff.forge.events;
 
-import com.natamus.easyelytratakeoff.events.ElytraEvent;
+import com.serilum.easyelytratakeoff.events.ElytraEvent;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.player.Player;

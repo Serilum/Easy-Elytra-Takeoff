@@ -1,9 +1,9 @@
-package com.natamus.easyelytratakeoff;
+package com.serilum.easyelytratakeoff;
 
 import com.natamus.collective.check.RegisterMod;
 import com.natamus.collective.check.ShouldLoadCheck;
-import com.natamus.easyelytratakeoff.forge.events.ForgeElytraEvent;
-import com.natamus.easyelytratakeoff.util.Reference;
+import com.serilum.easyelytratakeoff.forge.events.ForgeElytraEvent;
+import com.serilum.easyelytratakeoff.util.Reference;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
@@ -28,7 +28,7 @@ public class ModForge {
 	}
 
 	private void loadComplete(final FMLLoadCompleteEvent event) {
-    	MinecraftForge.EVENT_BUS.register(ForgeElytraEvent.class);
+		MinecraftForge.EVENT_BUS.register(ForgeElytraEvent.class);
 	}
 
 	private static void setGlobalConstants() {

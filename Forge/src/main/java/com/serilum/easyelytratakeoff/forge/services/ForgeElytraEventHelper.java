@@ -1,6 +1,6 @@
-package com.natamus.easyelytratakeoff.forge.services;
+package com.serilum.easyelytratakeoff.forge.services;
 
-import com.natamus.easyelytratakeoff.services.helpers.ElytraEventHelper;
+import com.serilum.easyelytratakeoff.services.helpers.ElytraEventHelper;
 import net.minecraft.world.entity.ai.attributes.AttributeInstance;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.player.Player;
@@ -10,9 +10,9 @@ import net.minecraft.world.item.ItemStack;
 import java.util.Collection;
 
 public class ForgeElytraEventHelper implements ElytraEventHelper {
-    @Override
-    public boolean isWearingAnElytra(Player player) {
-        boolean foundelytra = false;
+	@Override
+	public boolean isWearingAnElytra(Player player) {
+		boolean foundelytra = false;
 		for (ItemStack nis : player.getArmorSlots()) {
 			if (nis.getItem() instanceof ElytraItem) {
 				foundelytra = true;
@@ -37,6 +37,6 @@ public class ForgeElytraEventHelper implements ElytraEventHelper {
 				}
 			}
 		}
-        return foundelytra;
-    }
+		return foundelytra;
+	}
 }

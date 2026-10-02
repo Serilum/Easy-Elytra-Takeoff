@@ -1,4 +1,4 @@
-package com.natamus.easyelytratakeoff;
+package com.serilum.easyelytratakeoff;
 
 
 public class ModCommon {

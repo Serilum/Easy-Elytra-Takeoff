@@ -1,35 +1,35 @@
 {
   "schemaVersion": 1,
   "id": "easyelytratakeoff",
-  "version": "4.5",
+  "version": "4.6",
 
   "name": "Easy Elytra Takeoff",
   "description": "Allows easy taking off by elytra with a firework from the ground without that awkward jump.",
-  "authors": [ "Rick South" ],
+  "authors": [ "Serilum" ],
   "contact": {
     "homepage": "https://serilum.com/mod/easy-elytra-takeoff",
     "sources": "https://github.com/Serilum/Easy-Elytra-Takeoff",
     "issues": "https://github.com/Serilum/.issue-tracker/labels/Mod:%20Easy%20Elytra%20Takeoff"
   },
 
-  "license": "All Right Reserved",
+  "license": "All Rights Reserved",
   "icon": "icon.png",
 
   "environment": "*",
-  "entrypoints": { "main": [ "com.natamus.easyelytratakeoff.ModFabric" ] },
+  "entrypoints": { "main": [ "com.serilum.easyelytratakeoff.ModFabric" ] },
 
   "depends": {
     "fabricloader": ">=0.12.5",
     "fabric": "*",
     "minecraft": ">=1.20",
     "java": ">=17",
-    "collective": ">=7.91"
+    "collective": ">=8.40"
   },
 
   "custom": {
     "modmenu": {
       "links": {
-        "Donate <3" : "https://ricksouth.com/donate"
+        "Donate <3" : "https://serilum.com/donate"
       }
     }
   },
@@ -38,18 +38,15 @@
 	  " ",
 	  "Thank you very much to my Membership sponsors for supporting the development of this mod!",
 	  " ",
-	  "If you would like to contribute too, check out https://serilum.com/donate.",
+	  "If you would like to contribute too, check out https://serilum.com/donate",
 	  " ",
 	  "Membership sponsors:",
-	  " Alister",
 	  " Andrean Olgo",
+	  " AnyankaT",
 	  " aternosorg",
 	  " Cherriesaurus",
-	  " David Sanchez",
-	  " drdog111",
-	  " Michael W. S.",
-	  " t128",
-	  " Tyler Behl",
-	  " XAgent"
+	  " Linda Jansen",
+	  " MWS",
+	  " Tyler Behl"
   ]
 }

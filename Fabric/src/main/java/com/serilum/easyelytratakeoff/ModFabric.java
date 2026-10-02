@@ -1,10 +1,10 @@
-package com.natamus.easyelytratakeoff;
+package com.serilum.easyelytratakeoff;
 
 import com.natamus.collective.check.RegisterMod;
 import com.natamus.collective.check.ShouldLoadCheck;
 import com.natamus.collective.fabric.callbacks.CollectivePlayerEvents;
-import com.natamus.easyelytratakeoff.events.ElytraEvent;
-import com.natamus.easyelytratakeoff.util.Reference;
+import com.serilum.easyelytratakeoff.events.ElytraEvent;
+import com.serilum.easyelytratakeoff.util.Reference;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.event.player.UseItemCallback;
 import net.minecraft.server.level.ServerLevel;

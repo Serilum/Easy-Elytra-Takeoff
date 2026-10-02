@@ -1,7 +1,7 @@
-package com.natamus.easyelytratakeoff.events;
+package com.serilum.easyelytratakeoff.events;
 
 import com.natamus.collective.functions.EntityFunctions;
-import com.natamus.easyelytratakeoff.services.Services;
+import com.serilum.easyelytratakeoff.services.Services;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
