@@ -2,6 +2,7 @@ package com.serilum.easyelytratakeoff.events;
 
 import com.natamus.collective.functions.EntityFunctions;
 import com.serilum.easyelytratakeoff.services.Services;
+import com.serilum.easyelytratakeoff.util.Util;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
@@ -29,14 +30,20 @@ public class ElytraEvent {
 			if (left > -5) {
 				if (left > 0) {
 					EntityFunctions.setEntityFlag(player, 7, true);
-					FireworkRocketEntity efr = new FireworkRocketEntity(level, player.getItemInHand(InteractionHand.MAIN_HAND), player);
-					level.addFreshEntity(efr);
 
 					InteractionHand hand = playerhands.get(playerName);
+					if (hand == null || !Util.isReusableRocket(player.getItemInHand(hand).getDescriptionId())) {
+						FireworkRocketEntity efr = new FireworkRocketEntity(level, player.getItemInHand(InteractionHand.MAIN_HAND), player);
+						level.addFreshEntity(efr);
+					}
+
 					if (hand != null) {
 						ItemStack handstack = player.getItemInHand(hand);
 						String handname = handstack.getDescriptionId().toLowerCase();
-						if ((handname.contains("booster_")) && !handname.contains("_empty")) { // Elytra Booster compatibility
+						if (Util.isElytraBooster(handname)) {
+							handstack.use(level, player, hand);
+						}
+						else if (Util.isReusableRocket(handname)) {
 							handstack.use(level, player, hand);
 						}
 						playerhands.remove(playerName);
@@ -60,7 +67,12 @@ public class ElytraEvent {
 		String itemname = item.getDescriptionId().toLowerCase();
 
 		if (!handstack.getItem().equals(Items.FIREWORK_ROCKET) ) {
-			if (!((itemname.contains("booster_")) && !itemname.contains("_empty"))) { // Elytra Booster compatibility
+			if (Util.isReusableRocket(itemname)) {
+				if (player.isShiftKeyDown()) {
+					return InteractionResultHolder.pass(handstack);
+				}
+			}
+			else if (!Util.isElytraBooster(itemname)) {
 				return InteractionResultHolder.pass(handstack);
 			}
 			isbooster = true;
@@ -91,7 +103,8 @@ public class ElytraEvent {
 		}
 
 		String playerName = player.getName().getString();
-		player.teleportTo(player.getX(), player.getY()+0.2, player.getZ());
+		player.push(0, 0.2, 0);
+		player.hurtMarked = true;
 
 		newrockets.put(playerName, 1);
 		playerhands.put(playerName, hand);
