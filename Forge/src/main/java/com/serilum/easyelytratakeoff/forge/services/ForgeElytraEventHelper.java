@@ -2,9 +2,7 @@ package com.serilum.easyelytratakeoff.forge.services;
 
 import com.serilum.easyelytratakeoff.services.helpers.ElytraEventHelper;
 import net.minecraft.world.entity.ai.attributes.AttributeInstance;
-import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.ElytraItem;
 import net.minecraft.world.item.ItemStack;
 
 import java.util.Collection;
@@ -14,7 +12,7 @@ public class ForgeElytraEventHelper implements ElytraEventHelper {
 	public boolean isWearingAnElytra(Player player) {
 		boolean foundelytra = false;
 		for (ItemStack nis : player.getArmorSlots()) {
-			if (nis.getItem() instanceof ElytraItem) {
+			if (nis.canElytraFly(player)) {
 				foundelytra = true;
 				break;
 			}
@@ -23,16 +21,8 @@ public class ForgeElytraEventHelper implements ElytraEventHelper {
 		if (!foundelytra) {
 			Collection<AttributeInstance> atrb = player.getAttributes().getSyncableAttributes();
 			for (AttributeInstance ai : atrb) {
-				for (AttributeModifier m : ai.getModifiers()) {
-					String name = m.toString().toLowerCase();
-					if (name.contains("flight modifier") || name.contains("elytra curio modifier")) {
-						if (m.amount() >= 1.0) {
-							foundelytra = true;
-							break;
-						}
-					}
-				}
-				if (foundelytra) {
+				if (ai.getAttribute().value().getDescriptionId().equals("caelus.fallFlying")) {
+					foundelytra = ai.getValue() >= 1.0;
 					break;
 				}
 			}
